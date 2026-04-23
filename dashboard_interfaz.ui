@@ -233,7 +233,7 @@ QPushButton:pressed {
            <number>1</number>
           </property>
           <property name="bottomMargin">
-           <number>0</number>
+           <number>3</number>
           </property>
           <item>
            <widget class="QFrame" name="frame_8">
@@ -247,10 +247,23 @@ QPushButton:pressed {
           </item>
           <item>
            <widget class="QFrame" name="frame_7">
+            <property name="maximumSize">
+             <size>
+              <width>400</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <property name="styleSheet">
              <string notr="true">QFrame{
 background-color: rgb(117, 93, 72);
 border-radius: 20px;
+}
+
+QLabel{
+	
+	color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(44, 32, 22, 255), stop:1 rgba(245, 245, 235, 255));
+	
+	font: 900 25pt &quot;Microsoft Tai Le&quot;;	
 }</string>
             </property>
             <property name="frameShape">
@@ -259,6 +272,20 @@ border-radius: 20px;
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>Sistema 
+ de 
+ Empleados</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
           <item>
@@ -290,7 +317,7 @@ border-radius: 20px;
            <number>0</number>
           </property>
           <property name="topMargin">
-           <number>0</number>
+           <number>3</number>
           </property>
           <property name="rightMargin">
            <number>0</number>
