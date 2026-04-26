@@ -1,54 +1,31 @@
 import sys
-from PySide6.QtWidgets import QApplication, QMainWindow, QMdiSubWindow
+import ctypes
+from PySide6.QtWidgets import *
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile
-
-class VentanaPrincipal(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        
-        # Cargar la ventana principal (el Dashboard)
-        loader = QUiLoader()
-        archivo_principal = QFile("dashboard_interfaz.ui")
-        archivo_principal.open(QFile.ReadOnly)
-        loader.load(archivo_principal, self)
-        archivo_principal.close()
-        
-        self.setCentralWidget(self)
-        self.setWindowTitle("Sistema de Empleados - Atacalma")
-
-        # Conectar el botón para abrir la ventana de registro
-        # (Asegúrate de que el nombre del botón coincida con el del Designer)
-        self.btn_nuevo_empleado.clicked.connect(self.abrir_registro)
-        self.show()
-
-    def abrir_registro(self):
-        # 1. Cargamos el segundo archivo .ui (la ventana hija)
-        loader = QUiLoader()
-        archivo_hija = QFile("ui/registro_empleado.ui")
-        
-        if not archivo_hija.open(QFile.ReadOnly):
-            print("Error: No se pudo abrir el archivo de registro")
-            return
-            
-        # Este 'widget_hijo' contiene todo lo que diseñaste en el segundo .ui
-        widget_hijo = loader.load(archivo_hija)
-        archivo_hija.close()
-        
-        # 2. Creamos el contenedor MDI
-        subventana = QMdiSubWindow()
-        subventana.setWidget(widget_hijo) # Metemos el .ui cargado dentro
-        subventana.setWindowTitle("Registro de Nuevo Empleado")
-        
-        # 3. Lo agregamos al área MDI del Dashboard
-        # Suponiendo que tu QMdiArea se llama 'area_trabajo'
-        self.ui.area_trabajo.addSubWindow(subventana)
-        
-        # 4. Mostrar
-        subventana.show()
+from PySide6.QtGui import QIcon
+from dashboard import Dashboard # Importamos tu clase desde el otro archivo
+from empleados_ui import empleados_ui # Importamos tu clase desde el otro archivo
 
 if __name__ == "__main__":
+    # Creamos el motor de la aplicación
+    myappid = 'sistemaempleados.sql' # Reemplaza con tu propio ID de aplicación
+    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+
     app = QApplication(sys.argv)
-    ventana = VentanaPrincipal()
-    ventana.show()
+
+    # icono barra de tareas
+    app.setWindowIcon(QIcon("assets/img/snowflake_2744-fe0f.png"))
+    
+    # Creamos la instancia de nuestra ventana
+    ventana_principal = Dashboard()
+    ventana_principal.show()
+
+    # icono de la ventana
+    ventana_principal.setWindowIcon(QIcon("assets/img/snowflake_2744-fe0f.png"))
+
+    # Para mostrar la ventana maximizada al iniciar
+    ventana_principal.showMaximized()
+    
+    # Iniciamos el bucle de eventos
     sys.exit(app.exec())

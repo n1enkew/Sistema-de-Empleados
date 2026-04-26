@@ -26,9 +26,5 @@ echo [INFO] Verificando dependencias...
 python -m pip install --upgrade pip setuptools wheel
 pip install PySide6
 
-:: 4. Ejecutar el script principal
-echo [INFO] Iniciando programa...
-python main.py
-
 :: Evitar que la ventana se cierre si hay un error
 pause
