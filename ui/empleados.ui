@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1445</width>
-    <height>817</height>
+    <height>833</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,58 +34,7 @@ border-radius: 20px;
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QStackedWidget" name="stackedWidget">
-        <widget class="QWidget" name="page_2"/>
-       </widget>
-      </item>
-      <item>
-       <widget class="QStackedWidget" name="stackedWidget_2">
-        <widget class="QWidget" name="page_3"/>
-        <widget class="QWidget" name="page_4"/>
-       </widget>
-      </item>
-      <item>
-       <widget class="QStackedWidget" name="stackedWidget_3">
-        <widget class="QWidget" name="page_5"/>
-        <widget class="QWidget" name="page_6"/>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="lineEdit">
-        <property name="placeholderText">
-         <string>Buscar empleado...</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
-    <widget class="QFrame" name="frame_2">
-     <property name="minimumSize">
-      <size>
-       <width>600</width>
-       <height>600</height>
-      </size>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <widget class="QTableWidget" name="tableWidget">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>140</y>
-        <width>256</width>
-        <height>192</height>
-       </rect>
-      </property>
-     </widget>
+     <layout class="QVBoxLayout" name="verticalLayout"/>
     </widget>
    </item>
   </layout>

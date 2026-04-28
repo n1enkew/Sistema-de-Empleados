@@ -4,8 +4,8 @@ from PySide6.QtWidgets import *
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile
 from PySide6.QtGui import QIcon
-from dashboard import Dashboard # Importamos tu clase desde el otro archivo
-from empleados_ui import empleados_ui # Importamos tu clase desde el otro archivo
+from ui.dashboard import Dashboard # Importamos tu clase desde el otro archivo
+
 
 if __name__ == "__main__":
     # Creamos el motor de la aplicación

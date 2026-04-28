@@ -1,13 +1,14 @@
 from PySide6.QtWidgets import *
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile
-from empleados_ui import empleados_ui
+from ui.empleados_ui import Empleados_ui
+from ui.dptos_ui import Dptos_ui
 
 class Dashboard(QMainWindow):
     def __init__(self):
         super().__init__()
         
-        # Interfaz.ui --- DASHBOARD PRINCIPAL ---
+        # cargar Interfaz.ui --- DASHBOARD PRINCIPAL ---
         loader = QUiLoader()
         interfaz = QFile("ui/interfaz.ui") # Verifica que esta ruta sea correcta
         
@@ -37,24 +38,26 @@ class Dashboard(QMainWindow):
         self.ui.btn_cerrar_sesion.clicked.connect(self.cerrar_sesion)
 
         # empleados_ui.py --- INTERFAZ DE EMPLEADOS CRUD ---
-        self.seccion_empleados = empleados_ui()
+        self.seccion_empleados = Empleados_ui()
+        self.seccion_dptos = Dptos_ui()
         
         # 2. La metemos dentro del QStackedWidget de tu diseño
         # El stack_paginas es el que está dentro del frame_9
         self.ui.stack_paginas.addWidget(self.seccion_empleados)
+        self.ui.stack_paginas.addWidget(self.seccion_dptos)
         
         # 3. Obtenemos el número de página donde quedó
         self.indice_empleados = self.ui.stack_paginas.indexOf(self.seccion_empleados)
-
+        self.indice_dptos = self.ui.stack_paginas.indexOf(self.seccion_dptos)
+        
 
     # 4. Funciones para cambiar de página en el QStackedWidget
     def cambiar_a_empleados(self):
-        # Index 0 suele ser la primera página creada en el Stacked Widget
         self.ui.stack_paginas.setCurrentIndex(self.indice_empleados)
         print("Cambiando a vista de Empleados...")
 
     def cambiar_a_departamentos(self):
-        self.ui.stack_paginas.setCurrentIndex(1)
+        self.ui.stack_paginas.setCurrentIndex(self.indice_dptos)
         print("Cambiando a vista de Departamentos...")
 
     def cambiar_a_proyectos(self):
