@@ -506,7 +506,6 @@ border-radius: 20px;
 
 QStackedWidget{
 background-color: rgb(117, 93, 72);
-background-image: url(assets/img/bugs_brown.png);
 border-radius: 20px;
 }
 
@@ -539,7 +538,12 @@ border: none;
             </property>
             <widget class="QWidget" name="pagina_inicio">
              <property name="styleSheet">
-              <string notr="true"/>
+              <string notr="true">QWidget{
+background-color: rgb(117, 93, 72);
+background-image: url(assets/img/bugs_brown.png);
+border-radius: 20px;
+
+}</string>
              </property>
             </widget>
            </widget>

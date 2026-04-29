@@ -14,7 +14,12 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QFrame{
+   <string notr="true">QWidget{
+background-color: rgb(117, 93, 72);
+border-radius: 20px;
+}
+
+QFrame{
 background-color: rgb(117, 93, 72);
 border-radius: 20px;
 }</string>
@@ -161,12 +166,22 @@ QPushButton:pressed {
           <height>16777215</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QStackedWidget{
+background-color: rgb(44, 32, 22);
+}</string>
+        </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QStackedWidget" name="stackedWidget"/>
+         </item>
+        </layout>
        </widget>
       </item>
      </layout>
