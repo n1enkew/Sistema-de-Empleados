@@ -14,7 +14,12 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QFrame{
+   <string notr="true">QWidget{
+background-color: rgb(117, 93, 72);
+border-radius: 20px;
+}
+
+QFrame{
 background-color: rgb(117, 93, 72);
 border-radius: 20px;
 }</string>

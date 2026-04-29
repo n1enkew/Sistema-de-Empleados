@@ -13,7 +13,7 @@ class Dashboard(QMainWindow):
         
         # cargar Interfaz.ui --- DASHBOARD PRINCIPAL ---
         loader = QUiLoader()
-        interfaz = QFile("ui/interfaz.ui") # Verifica que esta ruta sea correcta
+        interfaz = QFile("ui/interfaz.ui")
         
         if interfaz.open(QFile.ReadOnly):
             print("Archivo .ui cargado correctamente.")
@@ -24,7 +24,7 @@ class Dashboard(QMainWindow):
         self.ui = loader.load(interfaz, self)
         interfaz.close()
 
-        # Ajustar tamano al de qt
+        # Ajustar tamano
         self.resize(self.ui.size())
         self.setMinimumSize(self.ui.size())
         

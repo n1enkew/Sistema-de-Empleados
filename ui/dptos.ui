@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>907</width>
-    <height>712</height>
+    <width>883</width>
+    <height>707</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -38,6 +38,9 @@ border-radius: 20px;
        <width>600</width>
        <height>600</height>
       </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -112,10 +115,16 @@ QPushButton:pressed {
            <property name="text">
             <string>Registar</string>
            </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>false</bool>
+           </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="modificar_eliminar">
+          <widget class="QPushButton" name="btn_modificar_eliminar">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -131,10 +140,16 @@ QPushButton:pressed {
            <property name="text">
             <string>Modificar o Eliminar</string>
            </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>false</bool>
+           </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="mostrar">
+          <widget class="QPushButton" name="btn_mostrar">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -143,6 +158,12 @@ QPushButton:pressed {
            </property>
            <property name="text">
             <string>Mostar</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>false</bool>
            </property>
            <property name="default">
             <bool>false</bool>
@@ -158,7 +179,10 @@ QPushButton:pressed {
       <item>
        <widget class="QFrame" name="frame_2">
         <property name="styleSheet">
-         <string notr="true">QStackedWidget{
+         <string notr="true">
+
+
+QWidget{
 background-color: rgb(44, 32, 22);
 }</string>
         </property>
@@ -170,7 +194,167 @@ background-color: rgb(44, 32, 22);
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QStackedWidget" name="stackedWidget"/>
+          <widget class="QStackedWidget" name="stack_dpto">
+           <property name="styleSheet">
+            <string notr="true">QStackedWidget{
+background-color: rgb(117, 93, 72);
+border-radius: 20px;
+}
+
+QWidget{
+
+border-radius:20px;
+}
+
+QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+	placeholder-text-color: #767e89;
+}
+
+QPushButton{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+font: 400 12pt &quot;Lexend&quot;;
+}</string>
+           </property>
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
+           <widget class="QWidget" name="registrar">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <widget class="QLineEdit" name="r_nombre">
+             <property name="geometry">
+              <rect>
+               <x>9</x>
+               <y>176</y>
+               <width>211</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="placeholderText">
+              <string>Nombre...</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="r_gerente">
+             <property name="geometry">
+              <rect>
+               <x>9</x>
+               <y>370</y>
+               <width>211</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="placeholderText">
+              <string>Nombre de Gerente...</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="pushButton">
+             <property name="geometry">
+              <rect>
+               <x>680</x>
+               <y>500</y>
+               <width>121</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Guardar</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label">
+             <property name="geometry">
+              <rect>
+               <x>9</x>
+               <y>151</y>
+               <width>201</width>
+               <height>21</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Nombre del Departamento</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_2">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>340</y>
+               <width>191</width>
+               <height>21</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Nombre del Gerente</string>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QWidget" name="modificar_eliminar">
+            <widget class="QLineEdit" name="lineEdit_2">
+             <property name="geometry">
+              <rect>
+               <x>600</x>
+               <y>50</y>
+               <width>151</width>
+               <height>21</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+}</string>
+             </property>
+             <property name="placeholderText">
+              <string>Nombre...</string>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QWidget" name="mostrar">
+            <property name="styleSheet">
+             <string notr="true">QWidget{
+border-radius:20px;
+}
+
+QTableView{
+background-color: rgb(255, 255, 255);
+}
+
+QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+}</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QLineEdit" name="lineEdit_3">
+               <property name="placeholderText">
+                <string>Buscar departamento...</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTableView" name="tableView"/>
+             </item>
+            </layout>
+           </widget>
+          </widget>
          </item>
         </layout>
        </widget>
