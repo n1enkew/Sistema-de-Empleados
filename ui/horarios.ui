@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>907</width>
+    <width>1040</width>
     <height>712</height>
    </rect>
   </property>
@@ -14,12 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget{
-background-color: rgb(117, 93, 72);
-border-radius: 20px;
-}
-
-QFrame{
+   <string notr="true">QFrame{
 background-color: rgb(117, 93, 72);
 border-radius: 20px;
 }</string>
@@ -102,7 +97,7 @@ QPushButton:pressed {
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,1,1">
          <item>
-          <widget class="QPushButton" name="btn_registrar">
+          <widget class="QPushButton" name="registrar">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -157,22 +152,12 @@ QPushButton:pressed {
       </item>
       <item>
        <widget class="QFrame" name="frame_2">
-        <property name="styleSheet">
-         <string notr="true">QStackedWidget{
-background-color: rgb(44, 32, 22);
-}</string>
-        </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QStackedWidget" name="stackedWidget"/>
-         </item>
-        </layout>
        </widget>
       </item>
      </layout>

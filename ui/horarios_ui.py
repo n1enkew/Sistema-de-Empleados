@@ -2,13 +2,13 @@ from PySide6.QtWidgets import *
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile
 
-class Dptos_ui(QWidget):
+class Horarios_ui(QWidget):
     def __init__(self):
         super().__init__()
-
+        
         # Cargar el archivo .ui
         loader = QUiLoader()
-        interfaz = QFile("ui/dptos.ui")
+        interfaz = QFile("ui/horarios.ui") # Verifica que esta ruta sea correcta
 
         if interfaz.open(QFile.ReadOnly):
             self.ui = loader.load(interfaz, self)
@@ -17,9 +17,7 @@ class Dptos_ui(QWidget):
         else:
             print("¡Error! No se pudo encontrar el archivo .ui")
 
-        # Ajuste de tamano
+        # Ajustar tamaño al de qt
         layout_principal = QVBoxLayout(self)
         layout_principal.setContentsMargins(0, 0, 0, 0)
         layout_principal.addWidget(self.ui) # 'self.ui' es lo que cargó el loader
-
-        
