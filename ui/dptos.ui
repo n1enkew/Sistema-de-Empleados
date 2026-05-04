@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>883</width>
-    <height>707</height>
+    <height>694</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -206,7 +206,14 @@ QWidget{
 border-radius:20px;
 }
 
-QLineEdit {
+</string>
+           </property>
+           <property name="currentIndex">
+            <number>2</number>
+           </property>
+           <widget class="QWidget" name="registrar">
+            <property name="styleSheet">
+             <string notr="true">QLineEdit {
     border: 2px solid gray;
     border-radius: 10px;
     padding: 0 8px;
@@ -220,109 +227,410 @@ QPushButton{
     padding: 0 8px;
     background: white;
 font: 400 12pt &quot;Lexend&quot;;
+}
+
+QLabel{
+color: white;
+font: 400 12pt &quot;Lexend&quot;
+}
+
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(44, 32, 22, 255), stop:1 rgba(181, 175, 169, 255));
+
+}
+
+QPushButton:pressed {
+    background-color: rgb(117, 93, 72); /* El color que quieras al hacer clic */
+    border: 2px solid rgb(44, 32, 22);   /* Opcional: cambiar el borde también */
 }</string>
-           </property>
-           <property name="currentIndex">
-            <number>0</number>
-           </property>
-           <widget class="QWidget" name="registrar">
-            <property name="styleSheet">
-             <string notr="true"/>
             </property>
-            <widget class="QLineEdit" name="r_nombre">
-             <property name="geometry">
-              <rect>
-               <x>9</x>
-               <y>176</y>
-               <width>211</width>
-               <height>31</height>
-              </rect>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="placeholderText">
-              <string>Nombre...</string>
-             </property>
-            </widget>
-            <widget class="QLineEdit" name="r_gerente">
-             <property name="geometry">
-              <rect>
-               <x>9</x>
-               <y>370</y>
-               <width>211</width>
-               <height>31</height>
-              </rect>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="placeholderText">
-              <string>Nombre de Gerente...</string>
-             </property>
-            </widget>
-            <widget class="QPushButton" name="pushButton">
-             <property name="geometry">
-              <rect>
-               <x>680</x>
-               <y>500</y>
-               <width>121</width>
-               <height>31</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>Guardar</string>
-             </property>
-            </widget>
-            <widget class="QLabel" name="label">
-             <property name="geometry">
-              <rect>
-               <x>9</x>
-               <y>151</y>
-               <width>201</width>
-               <height>21</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>Nombre del Departamento</string>
-             </property>
-            </widget>
-            <widget class="QLabel" name="label_2">
-             <property name="geometry">
-              <rect>
-               <x>10</x>
-               <y>340</y>
-               <width>191</width>
-               <height>21</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>Nombre del Gerente</string>
-             </property>
-            </widget>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QLabel" name="label_3">
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+	color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(181, 175, 169, 255), stop:1 rgba(222, 222, 213, 255));
+	
+	font: 900 20pt &quot;Lexend&quot;;	
+}</string>
+               </property>
+               <property name="text">
+                <string>Registrar Departamento</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_3">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>83</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Nombre del Departamento</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="r_nombre">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>300</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="placeholderText">
+                <string>Ingrese datos...</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>82</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>Nombre del Gerente</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="r_gerente">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>300</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="placeholderText">
+                <string>Ingrese datos...</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>83</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>150</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Guardar</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_4">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>83</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
            </widget>
            <widget class="QWidget" name="modificar_eliminar">
-            <widget class="QLineEdit" name="lineEdit_2">
-             <property name="geometry">
-              <rect>
-               <x>600</x>
-               <y>50</y>
-               <width>151</width>
-               <height>21</height>
-              </rect>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QLineEdit {
+            <property name="styleSheet">
+             <string notr="true">QLineEdit {
     border: 2px solid gray;
     border-radius: 10px;
     padding: 0 8px;
     background: white;
+	placeholder-text-color: #767e89;
+}
+
+QComboBox {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+	placeholder-text-color: #767e89;
+}
+
+QPushButton{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+font: 400 12pt &quot;Lexend&quot;;
+}
+
+QLabel{
+color: white;
+font: 400 12pt &quot;Lexend&quot;
+}
+
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(44, 32, 22, 255), stop:1 rgba(181, 175, 169, 255));
+
+}
+
+QPushButton:pressed {
+    background-color: rgb(117, 93, 72); /* El color que quieras al hacer clic */
+    border: 2px solid rgb(44, 32, 22);   /* Opcional: cambiar el borde también */
 }</string>
-             </property>
-             <property name="placeholderText">
-              <string>Nombre...</string>
-             </property>
-            </widget>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QLabel" name="label_4">
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+	color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(181, 175, 169, 255), stop:1 rgba(222, 222, 213, 255));
+	
+	font: 900 20pt &quot;Lexend&quot;;	
+}</string>
+               </property>
+               <property name="text">
+                <string>Modificar o Eliminar Departamento</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_6">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>48</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>Nombre del Departamento</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox">
+               <property name="maximumSize">
+                <size>
+                 <width>300</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_5">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>48</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_6">
+               <property name="text">
+                <string>Nombre nuevo del Departamento</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="r_nombre_2">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>300</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="placeholderText">
+                <string>Ingrese datos...</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_7">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>50</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_7">
+               <property name="text">
+                <string>Nombre nuevo del Gerente</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="r_nombre_3">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>300</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="placeholderText">
+                <string>Ingrese datos...</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_8">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>48</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_2">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>150</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Guardar</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_3">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>150</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Eliminar</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_9">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>48</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
            </widget>
            <widget class="QWidget" name="mostrar">
             <property name="styleSheet">
@@ -339,9 +647,57 @@ QLineEdit {
     border-radius: 10px;
     padding: 0 8px;
     background: white;
+}
+
+QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+	placeholder-text-color: #767e89;
+}
+
+QPushButton{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+font: 400 12pt &quot;Lexend&quot;;
+}
+
+QLabel{
+color: white;
+font: 400 12pt &quot;Lexend&quot;
+}
+
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(44, 32, 22, 255), stop:1 rgba(181, 175, 169, 255));
+
+}
+
+QPushButton:pressed {
+    background-color: rgb(117, 93, 72); /* El color que quieras al hacer clic */
+    border: 2px solid rgb(44, 32, 22);   /* Opcional: cambiar el borde también */
 }</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QLabel" name="label_8">
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+	color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(181, 175, 169, 255), stop:1 rgba(222, 222, 213, 255));
+	
+	font: 900 20pt &quot;Lexend&quot;;	
+}</string>
+               </property>
+               <property name="text">
+                <string>Buscar Departamentos</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
              <item>
               <widget class="QLineEdit" name="lineEdit_3">
                <property name="placeholderText">
@@ -351,6 +707,57 @@ QLineEdit {
              </item>
              <item>
               <widget class="QTableView" name="tableView"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_5">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>150</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Modificar</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_4">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>150</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Eliminar</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>808</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
              </item>
             </layout>
            </widget>
