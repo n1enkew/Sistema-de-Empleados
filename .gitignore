@@ -4,3 +4,9 @@ env/
 
 __pycache__/
 *.pyc
+
+.bevel/
+bevel/
+
+.vscode/
+vscode/
