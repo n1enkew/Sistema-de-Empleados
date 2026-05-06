@@ -209,9 +209,15 @@ border-radius:20px;
 </string>
            </property>
            <property name="currentIndex">
-            <number>1</number>
+            <number>2</number>
            </property>
            <widget class="QWidget" name="registrar">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
              <string notr="true">QLineEdit {
     border: 2px solid gray;
@@ -221,30 +227,15 @@ border-radius:20px;
 	placeholder-text-color: #767e89;
 }
 
-QPushButton{
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 0 8px;
-    background: white;
-font: 400 12pt &quot;Lexend&quot;;
-}
-
 QLabel{
 color: white;
-font: 400 12pt &quot;Lexend&quot;
+font: 600 12pt &quot;Lexend&quot;
 }
 
-QPushButton:hover{
-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(44, 32, 22, 255), stop:1 rgba(181, 175, 169, 255));
 
-}
-
-QPushButton:pressed {
-    background-color: rgb(117, 93, 72); /* El color que quieras al hacer clic */
-    border: 2px solid rgb(44, 32, 22);   /* Opcional: cambiar el borde también */
-}</string>
+</string>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,2,2,0">
+            <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,1,1,1,1">
              <item>
               <widget class="QLabel" name="label_3">
                <property name="styleSheet">
@@ -263,7 +254,7 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QFrame" name="frame_5">
+              <widget class="QFrame" name="frame_dpto">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                  <horstretch>0</horstretch>
@@ -277,10 +268,19 @@ QPushButton:pressed {
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_5">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QLabel" name="label">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -299,7 +299,7 @@ QPushButton:pressed {
                 <item>
                  <widget class="QFrame" name="frame_8">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -329,7 +329,7 @@ QPushButton:pressed {
                    <item>
                     <widget class="QLineEdit" name="r_nombre">
                      <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                        <horstretch>0</horstretch>
                        <verstretch>0</verstretch>
                       </sizepolicy>
@@ -358,7 +358,7 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QFrame" name="frame_6">
+              <widget class="QFrame" name="frame_gerente">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                  <horstretch>0</horstretch>
@@ -375,7 +375,7 @@ QPushButton:pressed {
                 <item>
                  <widget class="QLabel" name="label_2">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -394,7 +394,7 @@ QPushButton:pressed {
                 <item>
                  <widget class="QFrame" name="frame_9">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
@@ -453,7 +453,7 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QFrame" name="frame_7">
+              <widget class="QFrame" name="frame_guardar">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                  <horstretch>0</horstretch>
@@ -487,8 +487,29 @@ QPushButton:pressed {
                      <property name="maximumSize">
                       <size>
                        <width>150</width>
-                       <height>40</height>
+                       <height>30</height>
                       </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+font: 400 12pt &quot;Lexend&quot;;
+color: black;
+}
+
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(44, 32, 22, 255), stop:1 rgba(181, 175, 169, 255));
+
+}
+
+QPushButton:pressed {
+    background-color: rgb(117, 93, 72); /* El color que quieras al hacer clic */
+    border: 2px solid rgb(44, 32, 22);   /* Opcional: cambiar el borde también */
+}
+</string>
                      </property>
                      <property name="text">
                       <string>Guardar</string>
@@ -500,6 +521,19 @@ QPushButton:pressed {
                 </item>
                </layout>
               </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>160</height>
+                </size>
+               </property>
+              </spacer>
              </item>
             </layout>
            </widget>
@@ -531,7 +565,7 @@ font: 400 12pt &quot;Lexend&quot;;
 
 QLabel{
 color: white;
-font: 400 12pt &quot;Lexend&quot;
+font: 600 12pt &quot;Lexend&quot;
 }
 
 QPushButton:hover{
@@ -544,11 +578,11 @@ QPushButton:pressed {
     border: 2px solid rgb(44, 32, 22);   /* Opcional: cambiar el borde también */
 }</string>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_8" stretch="0,2,2,2,0">
+            <layout class="QVBoxLayout" name="verticalLayout_8" stretch="0,1,1,1,1">
              <item>
               <widget class="QLabel" name="Titulo">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -570,25 +604,61 @@ QPushButton:pressed {
              </item>
              <item>
               <widget class="QFrame" name="FrameBuscar">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="mouseTracking">
+                <bool>false</bool>
+               </property>
+               <property name="autoFillBackground">
+                <bool>false</bool>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
                </property>
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout_4">
+               <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,0">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QLabel" name="label_5">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="text">
                    <string>Nombre del Departamento</string>
                   </property>
                   <property name="alignment">
-                   <set>Qt::AlignCenter</set>
+                   <set>Qt::AlignBottom|Qt::AlignHCenter</set>
                   </property>
                  </widget>
                 </item>
                 <item>
                  <widget class="QFrame" name="frame_13">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
@@ -607,7 +677,7 @@ QPushButton:pressed {
                      <property name="maximumSize">
                       <size>
                        <width>300</width>
-                       <height>16777215</height>
+                       <height>30</height>
                       </size>
                      </property>
                     </widget>
@@ -620,6 +690,12 @@ QPushButton:pressed {
              </item>
              <item>
               <widget class="QFrame" name="FrameUpdate1">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
                </property>
@@ -629,6 +705,12 @@ QPushButton:pressed {
                <layout class="QVBoxLayout" name="verticalLayout_9">
                 <item>
                  <widget class="QLabel" name="label_9">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="text">
                    <string>Nombre nuevo del Departamento</string>
                   </property>
@@ -639,6 +721,12 @@ QPushButton:pressed {
                 </item>
                 <item>
                  <widget class="QFrame" name="frame_15">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
@@ -663,7 +751,7 @@ QPushButton:pressed {
                      <property name="maximumSize">
                       <size>
                        <width>300</width>
-                       <height>16777215</height>
+                       <height>30</height>
                       </size>
                      </property>
                      <property name="styleSheet">
@@ -682,6 +770,12 @@ QPushButton:pressed {
              </item>
              <item>
               <widget class="QFrame" name="FrameUpdate2">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
                </property>
@@ -689,8 +783,23 @@ QPushButton:pressed {
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_10">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QLabel" name="label_10">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="text">
                    <string>Nombre nuevo del Gerente</string>
                   </property>
@@ -701,6 +810,12 @@ QPushButton:pressed {
                 </item>
                 <item>
                  <widget class="QFrame" name="frame_17">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
@@ -725,7 +840,7 @@ QPushButton:pressed {
                      <property name="maximumSize">
                       <size>
                        <width>300</width>
-                       <height>16777215</height>
+                       <height>30</height>
                       </size>
                      </property>
                      <property name="styleSheet">
@@ -744,6 +859,33 @@ QPushButton:pressed {
              </item>
              <item>
               <widget class="QFrame" name="FrameUpdate3">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+font: 400 12pt &quot;Lexend&quot;;
+color: black;
+}
+
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(44, 32, 22, 255), stop:1 rgba(181, 175, 169, 255));
+
+}
+
+QPushButton:pressed {
+    background-color: rgb(117, 93, 72); /* El color que quieras al hacer clic */
+    border: 2px solid rgb(44, 32, 22);   /* Opcional: cambiar el borde también */
+}
+</string>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
                </property>
@@ -868,7 +1010,7 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QTableView" name="tableView"/>
+              <widget class="QTableView" name="tabla_dptos"/>
              </item>
              <item>
               <widget class="QFrame" name="frame_4">
@@ -877,6 +1019,27 @@ QPushButton:pressed {
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+font: 400 12pt &quot;Lexend&quot;;
+color: black;
+}
+
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(44, 32, 22, 255), stop:1 rgba(181, 175, 169, 255));
+
+}
+
+QPushButton:pressed {
+    background-color: rgb(117, 93, 72); /* El color que quieras al hacer clic */
+    border: 2px solid rgb(44, 32, 22);   /* Opcional: cambiar el borde también */
+}
+</string>
                </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>

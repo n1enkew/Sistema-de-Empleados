@@ -540,9 +540,7 @@ border: none;
              <property name="styleSheet">
               <string notr="true">QWidget{
 background-color: rgb(117, 93, 72);
-background-image: url(assets/img/bugs_brown.png);
 border-radius: 20px;
-
 }</string>
              </property>
             </widget>
