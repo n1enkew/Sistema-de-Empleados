@@ -134,4 +134,3 @@ class Dashboard(QMainWindow):
     def cerrar_sesion(self):
         print("Cerrando sesión...")
         self.close()
-

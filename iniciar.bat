@@ -26,5 +26,8 @@ echo [INFO] Verificando dependencias...
 python -m pip install --upgrade pip setuptools wheel
 pip install PySide6
 
+echo [INFO] Instalando PyMongo...
+pip install pymongo
+
 :: Evitar que la ventana se cierre si hay un error
 pause

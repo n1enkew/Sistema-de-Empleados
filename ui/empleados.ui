@@ -209,7 +209,7 @@ border-radius:20px;
 </string>
            </property>
            <property name="currentIndex">
-            <number>2</number>
+            <number>0</number>
            </property>
            <widget class="QWidget" name="registrar">
             <property name="sizePolicy">
@@ -411,7 +411,7 @@ QComboBox {
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="0">
+                  <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="0,0">
                    <property name="spacing">
                     <number>0</number>
                    </property>
@@ -427,6 +427,31 @@ QComboBox {
                    <property name="bottomMargin">
                     <number>0</number>
                    </property>
+                   <item>
+                    <widget class="QLineEdit" name="r_nombre_gerente_6">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>300</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                     <property name="placeholderText">
+                      <string>Ciudad...</string>
+                     </property>
+                    </widget>
+                   </item>
                    <item>
                     <widget class="QLineEdit" name="r_nombre_gerente">
                      <property name="sizePolicy">
@@ -448,7 +473,7 @@ QComboBox {
                       <set>Qt::AlignCenter</set>
                      </property>
                      <property name="placeholderText">
-                      <string>Ingrese datos...</string>
+                      <string>Calle...</string>
                      </property>
                     </widget>
                    </item>
@@ -713,9 +738,9 @@ QComboBox {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLineEdit" name="r_nombre_gerente_4">
+                    <widget class="QDateEdit" name="dateEdit">
                      <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                        <horstretch>0</horstretch>
                        <verstretch>0</verstretch>
                       </sizepolicy>
@@ -727,13 +752,14 @@ QComboBox {
                       </size>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true"/>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
-                     </property>
-                     <property name="placeholderText">
-                      <string>Ingrese datos...</string>
+                      <string notr="true">QDateEdit{
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+	placeholder-text-color: #767e89;
+}
+</string>
                      </property>
                     </widget>
                    </item>
