@@ -44,3 +44,11 @@ class EmpleadoModel:
     
     def eliminar_empleado(self, nombre_filtro):
         return self.coleccion.delete_one({"nombre": nombre_filtro})
+    
+    def importar_masivo(self, lista_empleados):
+        """
+        Recibe una lista de diccionarios y los inserta todos de un golpe.
+        """
+        if lista_empleados:
+            return self.coleccion.insert_many(lista_empleados)
+        return None
