@@ -224,10 +224,50 @@ QComboBox {
 	color: black;
 }
 
+/* Estilo general de la tabla */
+QTableView {
+    background-color: rgb(44, 32, 22);
+    color: black;
+    gridline-color: rgb(70, 55, 40);
+    border: 1px solid rgb(80, 60, 45);
+    border-radius: 10px;
+    font-size: 13px;
+    selection-background-color: rgb(117, 93, 72);
+    selection-color: rgb(85, 65, 50);
+}
+
+/* Estilo de las celdas individuales */
+QTableView::item {
+    padding: 8px;
+    border-bottom: 1px solid rgb(60, 45, 35);
+}
+
+/* Efecto Hover (cuando pasas el mouse por una fila)
+QTableView::item:hover {
+    background-color: rgb(85, 65, 50);
+}
+
+ Estilo de las cabeceras (Los nombres de las columnas) */
+QHeaderView::section {
+    background-color: rgb(30, 22, 15);
+    color: #D2B48C; /* Color canela/tan */
+    padding: 10px;
+    border: none;
+    border-right: 1px solid rgb(60, 45, 35);
+    border-bottom: 2px solid rgb(117, 93, 72);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Estilo para las esquinas superiores */
+QTableCornerButton::section {
+    background-color: rgb(30, 22, 15);
+    border: none;
+}
 </string>
            </property>
            <property name="currentIndex">
-            <number>1</number>
+            <number>2</number>
            </property>
            <widget class="QWidget" name="registrar">
             <property name="sizePolicy">
@@ -2061,90 +2101,17 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit_3">
+              <widget class="QLineEdit" name="buscar_empleado_input">
                <property name="placeholderText">
                 <string>Buscar empleado...</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QTableView" name="tabla_empleados"/>
-             </item>
-             <item>
-              <widget class="QFrame" name="frame_4">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton{
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 0 8px;
-    background: white;
-font: 400 12pt &quot;Lexend&quot;;
-color: black;
-}
-
-QPushButton:hover{
-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(44, 32, 22, 255), stop:1 rgba(181, 175, 169, 255));
-
-}
-
-QPushButton:pressed {
-    background-color: rgb(117, 93, 72); /* El color que quieras al hacer clic */
-    border: 2px solid rgb(44, 32, 22);   /* Opcional: cambiar el borde también */
-}
-</string>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_4">
-                <item>
-                 <widget class="QPushButton" name="btn_modificar">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>16777215</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>Modificar</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="btn_eliminar">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>16777215</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>Eliminar</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
+              <widget class="QTableView" name="tabla_empleados">
+               <attribute name="horizontalHeaderStretchLastSection">
+                <bool>true</bool>
+               </attribute>
               </widget>
              </item>
             </layout>

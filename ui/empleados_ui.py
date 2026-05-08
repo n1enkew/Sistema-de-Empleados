@@ -3,6 +3,7 @@ from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import *
 from datetime import datetime
 from database.EmpleadoModel import EmpleadoModel
+from database.EmpleadoTablaModel import EmpleadoTableModel
 
 class Empleados_ui(QWidget):
     def __init__(self):
@@ -20,6 +21,36 @@ class Empleados_ui(QWidget):
             print("¡Error! No se pudo encontrar el archivo .ui")
 
         self.modelo_empleado = EmpleadoModel() 
+        self.modelo_tabla = EmpleadoTableModel()
+
+        self.pagina_actual = 0
+        self.tamano_pagina = 10 # Cuántos empleados ver por página
+
+        self.ui.buscar_empleado_input.textChanged.connect(self.actualizar_tabla)
+
+        self.btn_anterior = QPushButton("⬅️ Anterior")
+        self.btn_siguiente = QPushButton("Siguiente ➡️")
+        self.label_paginacion = QLabel("Página: 1")
+
+        pag_mostrar = self.ui.stack_empleado.widget(2)
+
+        layout_botones = QHBoxLayout()
+        layout_botones.addWidget(self.btn_anterior)
+        layout_botones.addWidget(self.label_paginacion)
+        layout_botones.addWidget(self.btn_siguiente)
+
+        if pag_mostrar.layout():
+            pag_mostrar.layout().addLayout(layout_botones)
+        else:
+            # Si no tiene layout en el Designer, creamos uno nuevo
+            nuevo_layout = QVBoxLayout(pag_mostrar)
+            nuevo_layout.addWidget(self.ui.tabla_empleados) # Tu tabla existente
+            nuevo_layout.addLayout(layout_botones)
+
+        self.btn_anterior.clicked.connect(self.pagina_anterior)
+        self.btn_siguiente.clicked.connect(self.pagina_siguiente)
+
+        
 
         # Ajustar tamaño al de qt
         layout_principal = QVBoxLayout(self)
@@ -38,6 +69,8 @@ class Empleados_ui(QWidget):
         self.ui.btn_eliminar_empleado.clicked.connect(self.eliminar_empleado)
 
         self.ui.stack_empleado.setCurrentWidget(self.ui.stack_empleado.widget(0)) # Para que se abra en la seccion de registrar empleado por defecto
+
+        self.actualizar_tabla()
 
     def sec_registrar_empleado(self):
         self.ui.stack_empleado.setCurrentWidget(self.ui.stack_empleado.widget(0))
@@ -199,3 +232,33 @@ class Empleados_ui(QWidget):
             self.ui.r_salario.clear()
             self.ui.r_fecha_inicio.setDate(QDate.currentDate())
         
+    def actualizar_tabla(self):
+        busqueda = self.ui.buscar_empleado_input.text()
+        
+        # Consultar a MongoDB con Filtro y Paginación
+        # 'skip' se salta los registros de páginas anteriores
+        # 'limit' solo trae el máximo por página
+        filtro = {"nombre": {"$regex": busqueda, "$options": "i"}} # "i" es para ignorar mayúsculas
+        
+        cursor = self.modelo_empleado.coleccion.find(filtro)\
+                .skip(self.pagina_actual * self.tamano_pagina)\
+                .limit(self.tamano_pagina)
+        
+        lista_empleados = list(cursor)
+
+        self.label_paginacion.setText(f"Página: {self.pagina_actual + 1}")
+        
+        # Crear el modelo y asignarlo a la tabla que ya tienes en el .ui
+        self.tabla_modelo = EmpleadoTableModel(lista_empleados)
+        self.ui.tabla_empleados.setModel(self.tabla_modelo)
+
+    def pagina_siguiente(self):
+        self.pagina_actual += 1
+        self.actualizar_tabla()
+
+    def pagina_anterior(self):
+        if self.pagina_actual > 0:
+            self.pagina_actual -= 1
+            self.actualizar_tabla()
+
+    
