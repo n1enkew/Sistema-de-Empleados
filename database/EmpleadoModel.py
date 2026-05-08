@@ -4,7 +4,7 @@ from datetime import datetime
 class EmpleadoModel:
     def __init__(self):
         self.conexion = MongoConexion()
-        self.coleccion_empleados = self.conexion.obtener_coleccion("empleados")
+        self.coleccion = self.conexion.obtener_coleccion("empleados")
 
     def crear_empleado(self, nombre, direccion_dict, telefono, correo, fecha_inicio, salario, depto):
         """
@@ -31,3 +31,16 @@ class EmpleadoModel:
         }
         
         return self.coleccion.insert_one(documento)
+    
+    def consultar_empleados(self):
+        return list(self.coleccion.find())
+
+    def actualizar_empleado(self, nombre_filtro, nuevos_datos):
+        # Es vital que el nombre coincida EXACTAMENTE
+        return self.coleccion.update_one(
+            {"nombre": nombre_filtro}, 
+            {"$set": nuevos_datos}
+        )
+    
+    def eliminar_empleado(self, nombre_filtro):
+        return self.coleccion.delete_one({"nombre": nombre_filtro})

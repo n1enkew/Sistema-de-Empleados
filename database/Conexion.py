@@ -1,8 +1,8 @@
-from pymongo import Mongoclient
+from pymongo import MongoClient
 
 class MongoConexion:
     def __init__(self):
-        self.client = Mongoclient("mongodb://10.10.48.141:27017/")
+        self.client = MongoClient("mongodb://localhost:27017/")
         self.db = self.client["SistemaEmpleadosDb"]
 
     def obtener_coleccion(self, nombre_coleccion):

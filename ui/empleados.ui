@@ -206,10 +206,28 @@ QWidget{
 border-radius:20px;
 }
 
+QDateEdit{
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+	placeholder-text-color: #767e89;
+	color: black;
+}
+
+QComboBox {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+	placeholder-text-color: #767e89;
+	color: black;
+}
+
 </string>
            </property>
            <property name="currentIndex">
-            <number>0</number>
+            <number>1</number>
            </property>
            <widget class="QWidget" name="registrar">
             <property name="sizePolicy">
@@ -225,6 +243,7 @@ border-radius:20px;
     padding: 0 8px;
     background: white;
 	placeholder-text-color: #767e89;
+	color: black;
 }
 
 QLabel{
@@ -349,6 +368,9 @@ QComboBox {
                      <property name="styleSheet">
                       <string notr="true"/>
                      </property>
+                     <property name="text">
+                      <string/>
+                     </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
                      </property>
@@ -428,7 +450,7 @@ QComboBox {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLineEdit" name="r_nombre_gerente_6">
+                    <widget class="QLineEdit" name="r_ciudad">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                        <horstretch>0</horstretch>
@@ -453,7 +475,7 @@ QComboBox {
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="r_nombre_gerente">
+                    <widget class="QLineEdit" name="r_calle">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                        <horstretch>0</horstretch>
@@ -548,7 +570,7 @@ QComboBox {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLineEdit" name="r_nombre_gerente_2">
+                    <widget class="QLineEdit" name="r_telefono">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                        <horstretch>0</horstretch>
@@ -643,7 +665,7 @@ QComboBox {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLineEdit" name="r_nombre_gerente_3">
+                    <widget class="QLineEdit" name="r_correo">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                        <horstretch>0</horstretch>
@@ -738,7 +760,7 @@ QComboBox {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QDateEdit" name="dateEdit">
+                    <widget class="QDateEdit" name="r_fecha_inicio">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                        <horstretch>0</horstretch>
@@ -758,6 +780,7 @@ QComboBox {
     padding: 0 8px;
     background: white;
 	placeholder-text-color: #767e89;
+	color: black;
 }
 </string>
                      </property>
@@ -834,7 +857,7 @@ QComboBox {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLineEdit" name="r_nombre_gerente_5">
+                    <widget class="QLineEdit" name="r_salario">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                        <horstretch>0</horstretch>
@@ -944,7 +967,7 @@ QComboBox {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QComboBox" name="comboBox_2">
+                    <widget class="QComboBox" name="r_dpto_asig">
                      <property name="maximumSize">
                       <size>
                        <width>300</width>
@@ -958,6 +981,7 @@ QComboBox {
     padding: 0 8px;
     background: white;
 	placeholder-text-color: #767e89;
+	color: black;
 }</string>
                      </property>
                     </widget>
@@ -993,7 +1017,7 @@ QComboBox {
                   </property>
                   <layout class="QHBoxLayout" name="horizontalLayout_7">
                    <item>
-                    <widget class="QPushButton" name="pushButton">
+                    <widget class="QPushButton" name="btn_guardar_empleado">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                        <horstretch>0</horstretch>
@@ -1048,6 +1072,7 @@ QPushButton:pressed {
     padding: 0 8px;
     background: white;
 	placeholder-text-color: #767e89;
+	color: black;
 }
 
 QComboBox {
@@ -1176,7 +1201,7 @@ QPushButton:pressed {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QComboBox" name="comboBox">
+                    <widget class="QComboBox" name="cbx_seleccionar_empleado">
                      <property name="maximumSize">
                       <size>
                        <width>300</width>
@@ -1343,7 +1368,7 @@ QPushButton:pressed {
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="0">
+                  <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="0,0">
                    <property name="spacing">
                     <number>0</number>
                    </property>
@@ -1360,7 +1385,7 @@ QPushButton:pressed {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLineEdit" name="m_direccion">
+                    <widget class="QLineEdit" name="m_ciudad">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                        <horstretch>0</horstretch>
@@ -1380,7 +1405,32 @@ QPushButton:pressed {
                       <set>Qt::AlignCenter</set>
                      </property>
                      <property name="placeholderText">
-                      <string>Ingrese datos...</string>
+                      <string>Ciudad...</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="m_calle">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>300</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                     <property name="placeholderText">
+                      <string>Calle...</string>
                      </property>
                     </widget>
                    </item>
@@ -1645,9 +1695,9 @@ QPushButton:pressed {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLineEdit" name="m_fecha_inicio">
+                    <widget class="QDateEdit" name="m_fecha_inicio">
                      <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                        <horstretch>0</horstretch>
                        <verstretch>0</verstretch>
                       </sizepolicy>
@@ -1657,15 +1707,6 @@ QPushButton:pressed {
                        <width>300</width>
                        <height>16777215</height>
                       </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true"/>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
-                     </property>
-                     <property name="placeholderText">
-                      <string>Ingrese datos...</string>
                      </property>
                     </widget>
                    </item>
@@ -1911,7 +1952,7 @@ QPushButton:pressed {
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_8">
                 <item>
-                 <widget class="QPushButton" name="btn_guardar">
+                 <widget class="QPushButton" name="btn_guardar_mod">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -1930,7 +1971,7 @@ QPushButton:pressed {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btn_eliminar_2">
+                 <widget class="QPushButton" name="btn_eliminar_empleado">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
