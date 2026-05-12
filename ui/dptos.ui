@@ -239,7 +239,7 @@ QDateEdit {
 }</string>
            </property>
            <property name="currentIndex">
-            <number>2</number>
+            <number>1</number>
            </property>
            <widget class="QWidget" name="registrar">
             <property name="sizePolicy">
@@ -452,7 +452,7 @@ font: 600 12pt &quot;Lexend&quot;
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLineEdit" name="r_nombre_gerente">
+                    <widget class="QLineEdit" name="r_gerente">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                        <horstretch>0</horstretch>
@@ -507,7 +507,7 @@ font: 600 12pt &quot;Lexend&quot;
                   </property>
                   <layout class="QHBoxLayout" name="horizontalLayout_7">
                    <item>
-                    <widget class="QPushButton" name="pushButton">
+                    <widget class="QPushButton" name="btn_guardar_dpto">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                        <horstretch>0</horstretch>
@@ -703,7 +703,7 @@ QPushButton:pressed {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QComboBox" name="comboBox">
+                    <widget class="QComboBox" name="cbx_mod_depto">
                      <property name="maximumSize">
                       <size>
                        <width>300</width>
@@ -771,7 +771,7 @@ QPushButton:pressed {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLineEdit" name="r_nombre_n_dpto">
+                    <widget class="QLineEdit" name="m_nombre">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                        <horstretch>0</horstretch>
@@ -860,7 +860,7 @@ QPushButton:pressed {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLineEdit" name="r_nombre_n_gerente">
+                    <widget class="QLineEdit" name="m_gerente">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                        <horstretch>0</horstretch>
@@ -924,7 +924,7 @@ QPushButton:pressed {
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_8">
                 <item>
-                 <widget class="QPushButton" name="btn_guardar">
+                 <widget class="QPushButton" name="btn_guardar_mod">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -943,7 +943,7 @@ QPushButton:pressed {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btn_eliminar_2">
+                 <widget class="QPushButton" name="btn_eliminar_dpto">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
