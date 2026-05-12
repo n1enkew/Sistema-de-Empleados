@@ -59,6 +59,7 @@ class Empleados_ui(QWidget):
         print("Registrar empleado")
 
     def modificar_eliminar_empleado(self):
+        self.cargar_departamentos_en_combo()
         self.ui.stack_empleado.setCurrentWidget(self.ui.stack_empleado.widget(1))
         print("Modificar/Eliminar empleado")
 
