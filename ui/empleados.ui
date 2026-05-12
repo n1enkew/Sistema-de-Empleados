@@ -209,7 +209,7 @@ border-radius:20px;
 </string>
            </property>
            <property name="currentIndex">
-            <number>0</number>
+            <number>1</number>
            </property>
            <widget class="QWidget" name="registrar">
             <property name="sizePolicy">
@@ -919,7 +919,7 @@ QDateEdit {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QComboBox" name="r_dpto">
+                    <widget class="QComboBox" name="r_dpto_asig">
                      <property name="maximumSize">
                       <size>
                        <width>300</width>
@@ -968,7 +968,7 @@ QDateEdit {
                   </property>
                   <layout class="QHBoxLayout" name="horizontalLayout_7">
                    <item>
-                    <widget class="QPushButton" name="pushButton">
+                    <widget class="QPushButton" name="btn_guardar_empleado">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                        <horstretch>0</horstretch>
@@ -1018,6 +1018,7 @@ QPushButton:pressed {
            <widget class="QWidget" name="modificar_eliminar">
             <property name="styleSheet">
              <string notr="true">QLineEdit {
+	color: black;
     border: 2px solid gray;
     border-radius: 10px;
     padding: 0 8px;
@@ -1026,6 +1027,16 @@ QPushButton:pressed {
 }
 
 QComboBox {
+	color: black;
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+	placeholder-text-color: #767e89;
+}
+
+QDateEdit {
+	color: black;
     border: 2px solid gray;
     border-radius: 10px;
     padding: 0 8px;
@@ -1151,7 +1162,7 @@ QPushButton:pressed {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QComboBox" name="comboBox">
+                    <widget class="QComboBox" name="cbx_seleccionar_empleado">
                      <property name="maximumSize">
                       <size>
                        <width>300</width>
@@ -1620,9 +1631,9 @@ QPushButton:pressed {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLineEdit" name="m_fecha_inicio">
+                    <widget class="QDateEdit" name="m_fecha_inicio">
                      <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                        <horstretch>0</horstretch>
                        <verstretch>0</verstretch>
                       </sizepolicy>
@@ -1632,15 +1643,6 @@ QPushButton:pressed {
                        <width>300</width>
                        <height>16777215</height>
                       </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true"/>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
-                     </property>
-                     <property name="placeholderText">
-                      <string>Ingrese datos...</string>
                      </property>
                     </widget>
                    </item>
@@ -1886,7 +1888,7 @@ QPushButton:pressed {
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_8">
                 <item>
-                 <widget class="QPushButton" name="btn_guardar">
+                 <widget class="QPushButton" name="btn_guardar_mod">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -1905,7 +1907,7 @@ QPushButton:pressed {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btn_eliminar_2">
+                 <widget class="QPushButton" name="btn_eliminar_mod">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>

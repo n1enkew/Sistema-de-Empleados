@@ -7,7 +7,7 @@ class MySQLConexion:
             'host': 'localhost',
             'user': 'root',       # Tu usuario
             'password': '123456', # Tu contraseña
-            'database': 'secdb'
+            'database': 'sedb'
         }
 
     def obtener_conexion(self):
