@@ -26,5 +26,8 @@ echo [INFO] Verificando dependencias...
 python -m pip install --upgrade pip setuptools wheel
 pip install PySide6
 
+echo [INFO] Instalar MySql Connector...
+pip install mysql-connector-python
+
 :: Evitar que la ventana se cierre si hay un error
 pause

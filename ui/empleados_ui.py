@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import *
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile
+from datetime import datetime
 
 class Empleados_ui(QWidget):
     def __init__(self):
@@ -45,3 +46,33 @@ class Empleados_ui(QWidget):
         print(type(self.ui.stack_empleado.widget(2)))
         self.ui.stack_empleado.setCurrentWidget(self.ui.stack_empleado.widget(2))
         print("Mostrar empleados")
+
+    def crear_empleado(self):
+        try:
+            nombre = self.ui.r_nombre.text()
+            # Combinamos calle y ciudad en un solo string para la columna 'direccion'
+            direccion = f"{self.ui.r_calle.text()}, {self.ui.r_ciudad.text()}"
+            
+            fecha_qdate = self.ui.r_fecha_inicio.date()
+            fecha_dt = datetime(fecha_qdate.year(), fecha_qdate.month(), fecha_qdate.day())
+
+            # IMPORTANTE: Aquí deberías pasar el ID del depto, no el nombre.
+            # Por ahora pasaremos 1 como prueba o el index del combobox
+            id_depto = self.ui.r_dpto_asig.currentIndex() + 1 
+
+            exito = self.modelo_empleado.crear_empleado(
+                nombre, 
+                direccion, 
+                self.ui.r_telefono.text(),
+                self.ui.r_correo.text(),
+                fecha_dt,
+                float(self.ui.r_salario.text() or 0),
+                id_depto
+            )
+            
+            if exito:
+                print(f"Empleado {nombre} guardado en MySQL.")
+                self.limpiar_formulario()
+        
+        except Exception as e:
+            print(f"Error en la interfaz: {e}")

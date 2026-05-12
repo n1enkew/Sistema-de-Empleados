@@ -209,7 +209,7 @@ border-radius:20px;
 </string>
            </property>
            <property name="currentIndex">
-            <number>2</number>
+            <number>0</number>
            </property>
            <widget class="QWidget" name="registrar">
             <property name="sizePolicy">
@@ -220,6 +220,7 @@ border-radius:20px;
             </property>
             <property name="styleSheet">
              <string notr="true">QLineEdit {
+	color: black;
     border: 2px solid gray;
     border-radius: 10px;
     padding: 0 8px;
@@ -233,13 +234,22 @@ font: 600 12pt &quot;Lexend&quot;
 }
 
 QComboBox {
+	color: black;
     border: 2px solid gray;
     border-radius: 10px;
     padding: 0 8px;
     background: white;
 	placeholder-text-color: #767e89;
 }
-</string>
+
+QDateEdit {
+	color: black;
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: white;
+	placeholder-text-color: #767e89;
+}</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,1,1,1,1,1,1,1,0">
              <item>
@@ -428,7 +438,7 @@ QComboBox {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLineEdit" name="r_nombre_gerente">
+                    <widget class="QLineEdit" name="r_direccion">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                        <horstretch>0</horstretch>
@@ -523,7 +533,7 @@ QComboBox {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLineEdit" name="r_nombre_gerente_2">
+                    <widget class="QLineEdit" name="r_telefono">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                        <horstretch>0</horstretch>
@@ -543,7 +553,7 @@ QComboBox {
                       <set>Qt::AlignCenter</set>
                      </property>
                      <property name="placeholderText">
-                      <string>Ingrese datos...</string>
+                      <string>Ej:912345678</string>
                      </property>
                     </widget>
                    </item>
@@ -618,7 +628,7 @@ QComboBox {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLineEdit" name="r_nombre_gerente_3">
+                    <widget class="QLineEdit" name="r_correo">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                        <horstretch>0</horstretch>
@@ -713,9 +723,9 @@ QComboBox {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLineEdit" name="r_nombre_gerente_4">
+                    <widget class="QDateEdit" name="r_fecha_inicio">
                      <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                        <horstretch>0</horstretch>
                        <verstretch>0</verstretch>
                       </sizepolicy>
@@ -725,15 +735,6 @@ QComboBox {
                        <width>300</width>
                        <height>16777215</height>
                       </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true"/>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
-                     </property>
-                     <property name="placeholderText">
-                      <string>Ingrese datos...</string>
                      </property>
                     </widget>
                    </item>
@@ -808,7 +809,7 @@ QComboBox {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLineEdit" name="r_nombre_gerente_5">
+                    <widget class="QLineEdit" name="r_salario">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                        <horstretch>0</horstretch>
@@ -918,7 +919,7 @@ QComboBox {
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QComboBox" name="comboBox_2">
+                    <widget class="QComboBox" name="r_dpto">
                      <property name="maximumSize">
                       <size>
                        <width>300</width>
