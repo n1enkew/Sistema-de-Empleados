@@ -80,3 +80,22 @@ class EmpleadoModel:
             finally:
                 cursor.close()
                 conexion.close()
+    
+    def consultar_para_tabla(self):
+        conexion = self.db.obtener_conexion()
+        if conexion:
+            try:
+                cursor = conexion.cursor(dictionary=True)
+                # Usamos JOIN para traer el nombre del depto en lugar del ID
+                sql = """
+                    SELECT e.idEmpleado, e.nombre, e.direccion, e.telefono, 
+                           e.correo, e.fecha_inicio, e.salario, d.nombre as departamento
+                    FROM Empleado e
+                    LEFT JOIN Departamento d ON e.Departamento_idDepartamento = d.idDepartamento
+                """
+                cursor.execute(sql)
+                return cursor.fetchall()
+            finally:
+                cursor.close()
+                conexion.close()
+        return []

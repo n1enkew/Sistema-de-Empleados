@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import *
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import *
+from PySide6.QtGui import *
 from datetime import datetime
 from database.EmpleadoModel import EmpleadoModel
 
@@ -39,6 +40,19 @@ class Empleados_ui(QWidget):
 
         self.ui.cbx_seleccionar_empleado.currentIndexChanged.connect(self.cargar_datos_empleado_mod)
         self.ui.btn_guardar_mod.clicked.connect(self.ejecutar_modificacion)
+
+        
+
+        self.modelo_tabla = QStandardItemModel()
+        self.proxy_model = QSortFilterProxyModel()
+        self.proxy_model.setSourceModel(self.modelo_tabla)
+        self.proxy_model.setFilterCaseSensitivity(Qt.CaseInsensitive)
+
+        self.ui.tabla_empleados.setModel(self.proxy_model)
+
+        self.ui.buscar_empleado.textChanged.connect(self.filtrar_tabla)
+
+        self.aplicar_estilo_tabla()
 
     def registrar_empleado(self):
         self.ui.stack_empleado.setCurrentWidget(self.ui.stack_empleado.widget(0))
@@ -218,3 +232,57 @@ class Empleados_ui(QWidget):
         self.ui.m_correo.clear()
         self.ui.m_salario.clear()
         self.ui.m_fecha_inicio.setDate(QDate.currentDate())
+
+    def mostrar_empleados(self):
+        """Carga los datos desde MySQL a la tabla"""
+        self.ui.stack_empleado.setCurrentIndex(2)
+        
+        datos = self.EmpleadoModel.consultar_para_tabla()
+        self.modelo_tabla.clear()
+        
+        # Definir encabezados
+        headers = ["ID", "Nombre", "Dirección", "Teléfono", "Correo", "Inicio", "Salario", "Depto"]
+        self.modelo_tabla.setHorizontalHeaderLabels(headers)
+
+        for fila in datos:
+            items = [
+                QStandardItem(str(fila["idEmpleado"])),
+                QStandardItem(str(fila["nombre"])),
+                QStandardItem(str(fila["direccion"])),
+                QStandardItem(str(fila["telefono"])),
+                QStandardItem(str(fila["correo"])),
+                QStandardItem(str(fila["fecha_inicio"])),
+                QStandardItem(f"$ {fila['salario']:,.2f}"),
+                QStandardItem(str(fila["departamento"] or "Sin Asignar"))
+            ]
+            self.modelo_tabla.appendRow(items)
+        
+        # Ajustar columnas al contenido
+        self.ui.tabla_empleados.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+
+    def filtrar_tabla(self, texto):
+        """Filtra por nombre (columna 1) en tiempo real"""
+        self.proxy_model.setFilterKeyColumn(1) # Filtra por la columna 'Nombre'
+        self.proxy_model.setFilterFixedString(texto)
+
+    def aplicar_estilo_tabla(self):
+        self.ui.tabla_empleados.setStyleSheet("""
+            QTableView {
+                background-color: rgb(44, 32, 22);
+                color: white;
+                gridline-color: rgb(70, 55, 40);
+                border: 1px solid rgb(80, 60, 45);
+                border-radius: 5px;
+                selection-background-color: rgb(117, 93, 72);
+            }
+            QHeaderView::section {
+                background-color: rgb(30, 22, 15);
+                color: #D2B48C;
+                padding: 8px;
+                border: 1px solid rgb(60, 45, 35);
+                font-weight: bold;
+            }
+            QTableView::item:hover {
+                background-color: rgb(85, 65, 50);
+            }
+        """)
